@@ -8,8 +8,8 @@ const styles = StyleSheet.create({
     fontWeight: theme.fontWeights.normal,
     color: theme.colors.textSecondary,
   },
-  h1: {
-    fontSize: theme.fontSizes.xLarge,
+  h3: {
+    fontSize: theme.fontSizes.medium,
     fontWeight: theme.fontWeights.bold,
     color: theme.colors.textPrimary,
   },
@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
     fontWeight: theme.fontWeights.bold,
     color: theme.colors.textPrimary,
   },
-  h3: {
-    fontSize: theme.fontSizes.medium,
+  h1: {
+    fontSize: theme.fontSizes.xLarge,
     fontWeight: theme.fontWeights.bold,
     color: theme.colors.textPrimary,
   },

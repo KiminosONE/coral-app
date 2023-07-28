@@ -2,9 +2,9 @@ import { Image, View } from "react-native";
 import ExpText from "../../Utils/ExpText";
 import { StyleSheet } from "react-native";
 
-export default function ChatCard({ id, image, name, message }) {
+export default function ChatCard({ key, image, name, message }) {
   return (
-    <View key={id} style={style.cardChat}>
+    <View key={key} style={style.cardChat}>
       <Image
         style={style.image}
         source={{

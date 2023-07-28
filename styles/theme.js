@@ -1,6 +1,6 @@
 const theme = {
   colors: {
-    primary: "#0070f3",
+    primary: "#543193",
     secondary: "#ff0000",
     textPrimary: "#000000",
     textSecondary: "#494949",
@@ -8,9 +8,9 @@ const theme = {
     backgroundSecondary: "#000000",
   },
   fontSizes: {
-    small: 16,
-    medium: 18,
-    large: 22,
+    small: 15,
+    medium: 17,
+    large: 19,
     xLarge: 28,
   },
   device: {

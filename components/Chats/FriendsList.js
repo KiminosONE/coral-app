@@ -1,14 +1,10 @@
 import { FlatList, View } from "react-native";
-import ExpText from "../Utils/ExpText";
-import globalsStyles from "../../styles/globals";
 import FriendCard from "./Cards/FriendCard";
+import Section from "../Utils/Section";
 
 export default function FriendsList() {
   return (
-    <View style={globalsStyles.container}>
-      <View style={globalsStyles.header}>
-        <ExpText h2>Conexiones</ExpText>
-      </View>
+    <Section title={"Mis Fotos"} titleSize="h2">
       <FlatList
         horizontal
         data={data}
@@ -17,7 +13,7 @@ export default function FriendsList() {
           <FriendCard id={item.id} image={item.image} name={item.name} />
         )}
       />
-    </View>
+    </Section>
   );
 }
 

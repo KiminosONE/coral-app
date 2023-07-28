@@ -6,6 +6,9 @@ const globalsStyles = StyleSheet.create({
     marginHorizontal: "auto",
     alignSelf: "center",
   },
+  containerHome: {
+    width: "89%",
+  },
   header: {
     flexDirection: "row",
     justifyContent: "space-between",

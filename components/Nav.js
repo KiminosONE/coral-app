@@ -1,36 +1,47 @@
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import globalsStyles from "../styles/globals";
-import {
-  MaterialCommunityIcons,
-  Ionicons,
-  FontAwesome5,
-} from "@expo/vector-icons";
-import { Link } from "expo-router";
-import { AntDesign } from "@expo/vector-icons";
+import { Link, usePathname } from "expo-router";
+import React, { useEffect, useState } from "react";
+import Icons from "./Utils/Icons";
+
+const style = StyleSheet.create({
+  active: {
+    color: "red",
+  },
+});
+
+const NavTab = ({ children, href }) => {
+  const pathname = usePathname();
+  const active = pathname === href;
+
+  const stylesNavTab = [active && style.active];
+
+  return (
+    <Link href={href}>
+      {React.cloneElement(children, { style: stylesNavTab })}
+    </Link>
+  );
+};
 
 export default function Nav() {
   return (
     <View style={[globalsStyles.container, { marginTop: "auto" }]}>
       <View style={globalsStyles.header}>
-        <Link href="/chats">
-          <Ionicons name="chatbubble" size={24} color="black" />
-        </Link>
-        <Link href="/chats">
-          <AntDesign name="heart" size={24} color="black" />
-        </Link>
-        <Link href="/">
-          <MaterialCommunityIcons
-            name="zodiac-gemini"
-            size={24}
-            color="black"
-          />
-        </Link>
-        <Link href="/chats">
-          <Ionicons name="planet" size={24} color="black" />
-        </Link>
-        <Link href="/chats">
-          <FontAwesome5 name="user-alt" size={24} color="black" />
-        </Link>
+        <NavTab href="/chats">
+          <Icons icon="chat" />
+        </NavTab>
+        <NavTab href="/chats">
+          <Icons icon="corazon" />
+        </NavTab>
+        <NavTab href="/">
+          <Icons icon="geminis" />
+        </NavTab>
+        <NavTab href="/notices">
+          <Icons icon="notificaciones" />
+        </NavTab>
+        <NavTab href="/profile">
+          <Icons icon="perfil" />
+        </NavTab>
       </View>
     </View>
   );

@@ -17,7 +17,7 @@ export default function Header({ children }) {
         ]}
       >
         <Link href="/" style={styles.logo}>
-          <ExpText h1>Coral</ExpText>
+          <ExpText h1>Astro</ExpText>
         </Link>
         {children}
       </View>

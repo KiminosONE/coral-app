@@ -1,7 +1,7 @@
 // AnimatedTextInput.js
 import React, { useRef } from "react";
 import { View, TextInput, Animated, StyleSheet, Pressable } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import Icons from "../Utils/Icons";
 
 export default function Search() {
   // Referencia para el TextInput
@@ -47,7 +47,7 @@ export default function Search() {
         />
       </Animated.View>
       <Pressable onPress={handleAnimate} style={styles.logoSearch}>
-        <Ionicons name="search" size={24} color="black" />
+        <Icons icon="buscar" />
       </Pressable>
     </>
   );

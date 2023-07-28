@@ -1,28 +1,25 @@
-import { FlatList, View } from "react-native";
-import globalsStyles from "../../styles/globals";
-import { Ionicons } from "@expo/vector-icons";
-import ExpText from "../Utils/ExpText";
+import { FlatList } from "react-native";
 import ChatCard from "./Cards/ChatCard";
+import Section from "../Utils/Section";
+import Icons from "../Utils/Icons";
 
 export default function ChatList() {
   return (
-    <View style={globalsStyles.container}>
-      <View style={globalsStyles.header}>
-        <ExpText h2>Chats</ExpText>
-        <Ionicons name="filter" size={24} color="black" />
-      </View>
-      <FlatList
-        data={data}
-        renderItem={({ item }) => (
-          <ChatCard
-            id={item.id}
-            image={item.image}
-            name={item.name}
-            message={item.message}
-          />
-        )}
-      />
-    </View>
+    <Section
+      title={"Grupos"}
+      titleSize="h2"
+      eventIcon={<Icons icon="filter" />}
+      noBorder
+    >
+      {data.map((item) => (
+        <ChatCard
+          key={item.id}
+          image={item.image}
+          name={item.name}
+          message={item.message}
+        />
+      ))}
+    </Section>
   );
 }
 

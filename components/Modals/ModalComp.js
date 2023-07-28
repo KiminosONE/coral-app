@@ -1,6 +1,6 @@
 import { View, Text, Modal, Pressable, StyleSheet } from "react-native";
 import globalsStyles from "../../styles/globals";
-import { Ionicons } from "@expo/vector-icons";
+import Icons from "../Utils/Icons";
 
 export default function ModalComp({ hideModal, children }) {
   return (
@@ -19,9 +19,9 @@ export default function ModalComp({ hideModal, children }) {
         <View style={globalsStyles.container}>
           <View style={globalsStyles.header}>
             <Pressable onPress={() => hideModal()}>
-              <Ionicons name="close" size={24} color="black" />
+              <Icons icon="cierre" />
             </Pressable>
-            <Ionicons name="checkmark-sharp" size={24} color="black" />
+            <Icons icon="check" />
           </View>
           {children}
         </View>
