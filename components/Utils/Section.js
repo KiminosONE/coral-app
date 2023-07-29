@@ -1,10 +1,11 @@
 import { Pressable, StyleSheet } from "react-native";
 import ExpText from "./ExpText";
 import ExpView from "./ExpView";
+import theme from "../../styles/theme";
 
 export default function Section({
   title,
-  eventIcon,
+  titleIcon,
   evento = () => {},
   style,
   titleSize = "h3",
@@ -24,7 +25,7 @@ export default function Section({
     <ExpView container style={stylesArticle}>
       <ExpView style={styles.header}>
         <ExpText {...titleSizeList[titleSize]}>{title}</ExpText>
-        <Pressable onPress={() => evento()}>{eventIcon}</Pressable>
+        <Pressable onPress={() => evento()}>{titleIcon}</Pressable>
       </ExpView>
       <ExpView style={styles.contGeneral}>{children}</ExpView>
     </ExpView>
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
     paddingTop: 18,
     paddingBottom: 20,
     borderBottomWidth: 1.5,
-    borderBottomColor: "#ccc",
+    borderBottomColor: theme.colors.tertiary,
   },
   noBorder: {
     borderBottomWidth: 0,

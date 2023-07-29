@@ -6,7 +6,10 @@ import Icons from "./Utils/Icons";
 
 const style = StyleSheet.create({
   active: {
-    color: "red",
+    color: "black",
+  },
+  iconNav: {
+    color: "#999999",
   },
 });
 
@@ -14,7 +17,7 @@ const NavTab = ({ children, href }) => {
   const pathname = usePathname();
   const active = pathname === href;
 
-  const stylesNavTab = [active && style.active];
+  const stylesNavTab = [style.iconNav, active && style.active];
 
   return (
     <Link href={href}>
@@ -28,7 +31,7 @@ export default function Nav() {
     <View style={[globalsStyles.container, { marginTop: "auto" }]}>
       <View style={globalsStyles.header}>
         <NavTab href="/chats">
-          <Icons icon="chat" />
+          <Icons icon="chat"/>
         </NavTab>
         <NavTab href="/chats">
           <Icons icon="corazon" />

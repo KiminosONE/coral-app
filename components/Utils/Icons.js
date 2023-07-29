@@ -4,6 +4,7 @@ import {
   AntDesign,
   MaterialCommunityIcons,
   MaterialIcons,
+  SimpleLineIcons,
 } from "@expo/vector-icons";
 import React from "react";
 export default function Icons({ icon = "cierre", style, size = 24 }) {
@@ -22,6 +23,7 @@ export default function Icons({ icon = "cierre", style, size = 24 }) {
     estrella: <AntDesign name="star" size={24} color="black" />,
     trabajo: <MaterialIcons name="work-outline" size={24} color="black" />,
     ubicacion: <Ionicons name="location-outline" size={24} color="black" />,
+    arrowRight: <MaterialIcons name="arrow-forward-ios" size={24} color="black" />,
   };
 
   const respaldo = iconsList[icon] === undefined ? "cierre" : icon;

@@ -2,6 +2,7 @@ import { Pressable, StyleSheet } from "react-native";
 import ExpView from "../../Utils/ExpView";
 import Swipe from "../../Utils/Swipe";
 import Icons from "../../Utils/Icons";
+import theme from "../../../styles/theme";
 
 export default function Selector() {
   return (
@@ -9,15 +10,15 @@ export default function Selector() {
       <Swipe
         left
         style={styles.swipe}
-        icon={<Icons icon="cierre" size={34} style={{color : "red"}}/>}
+        icon={<Icons icon="cierre" size={30} style={styles.iconSelector}/>}
       />
       <ExpView style={styles.contLike}>
         <Swipe
           style={styles.swipe}
-          icon={<Icons icon="check" size={34} style={{color : "red"}}/>}
+          icon={<Icons icon="check" size={30} style={styles.iconSelector}/>}
         />
         <Pressable style={styles.btmSuperLike}>
-          <Icons icon="estrella" size={34} style={{color : "red"}}/>
+          <Icons icon="estrella" size={30} style={styles.iconSelector}/>
         </Pressable>
       </ExpView>
     </ExpView>
@@ -31,6 +32,9 @@ const styles = StyleSheet.create({
   swipe: {
     width: "60%",
   },
+  iconSelector: {
+    color: "white",
+  },
   contLike: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -40,7 +44,7 @@ const styles = StyleSheet.create({
     // height: 45,
     marginBottom: 10,
     borderRadius: 50,
-    backgroundColor: "black",
+    backgroundColor: theme.colors.primary,
     alignItems: "center",
     justifyContent: "center",
   },

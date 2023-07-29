@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { StyleSheet, PanResponder, Animated, Dimensions } from "react-native";
 import ExpView from "./ExpView";
+import theme from "../../styles/theme";
 
 export default function Swipe({ left, icon, style }) {
   const ballPosition = useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
@@ -70,7 +71,7 @@ export default function Swipe({ left, icon, style }) {
 
 const styles = StyleSheet.create({
   cont: {
-    backgroundColor: "gray",
+    backgroundColor: theme.colors.tertiary,
     padding: 5,
     borderRadius: 50,
     marginBottom: 10,
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
     width: 47,
     height: 47,
     borderRadius: 50,
-    backgroundColor: "black",
+    backgroundColor: theme.colors.primary,
     position: "absolute",
     top: 0,
   },

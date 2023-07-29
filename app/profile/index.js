@@ -1,15 +1,12 @@
-import { FlatList, StyleSheet, View } from "react-native";
-import Search from "../../components/Chats/Search";
+import { StyleSheet } from "react-native";
 import Header from "../../components/Header";
 import Head from "../../components/Profile/Head";
-import Section from "../../components/Utils/Section";
-import FriendCard from "../../components/Chats/Cards/FriendCard";
-import ExpText from "../../components/Utils/ExpText";
 import ExpScrollView from "../../components/Utils/ExpScrollView";
-import ValueLabel from "../../components/Utils/Values/ValueLabel";
-import { MaterialIcons } from "@expo/vector-icons";
-import ExpView from "../../components/Utils/ExpView";
-import ContValues from "../../components/Utils/Values/ContValues";
+import DataConfig from "../../components/Profile/DataConfig";
+import ExpText from "../../components/Utils/ExpText";
+import PostcardList from "../../components/Utils/Lists/PostcardList";
+import ValuesList from "../../components/Utils/Lists/ValuesList";
+import Biography from "../../components/Modals/Settings/Biography";
 
 export default function Page() {
   return (
@@ -17,23 +14,15 @@ export default function Page() {
       <Header></Header>
       <ExpScrollView>
         <Head />
-        <Section title={"Mis Fotos"}>
-          <FlatList
-            horizontal
-            data={data}
-            ItemSeparatorComponent={() => <View style={{ width: 13 }} />}
-            renderItem={({ item }) => (
-              <FriendCard id={item.id} image={item.image} name={item.name} />
-            )}
-          />
-        </Section>
-        <Section title={"Tipo de personalidad"}>
-          <ExpText>Agrega tu tipo de personalidad</ExpText>
-        </Section>
-        <Section title={"Biografia"}>
+        <DataConfig title={"Mis Fotos"}>
+          <PostcardList data={data} />
+        </DataConfig>
+        <DataConfig title={"Biografia"} compModal={<Biography />}>
           <ExpText>Agrega tu biografia</ExpText>
-        </Section>
-        <ContValues title="h3" />
+        </DataConfig>
+        <DataConfig title="Intereses">
+          <ValuesList data={dataItems} />
+        </DataConfig>
       </ExpScrollView>
     </>
   );
@@ -46,29 +35,58 @@ const styles = StyleSheet.create({
   },
 });
 
-const data = [
+const dataItems = [
   {
     id: 1,
-    name: "Juan Pablo",
-    image:
-      "https://static.tvtropes.org/pmwiki/pub/images/abcb6534_7913_4eb1_a7a5_62b081ebc628.png",
+    tipo: "trabajo",
+    name: "Futbol",
   },
   {
     id: 2,
-    name: "Felipe",
-    image:
-      "https://static.tvtropes.org/pmwiki/pub/images/abcb6534_7913_4eb1_a7a5_62b081ebc628.png",
+    tipo: "corazon",
+    name: "Playa",
   },
   {
     id: 3,
-    name: "Juan Camilo",
-    image:
-      "https://static.tvtropes.org/pmwiki/pub/images/abcb6534_7913_4eb1_a7a5_62b081ebc628.png",
+    tipo: "ubicacion",
+    name: "Country",
   },
   {
     id: 4,
-    name: "Juan Pablo jose gomez",
-    image:
-      "https://static.tvtropes.org/pmwiki/pub/images/abcb6534_7913_4eb1_a7a5_62b081ebc628.png",
+    tipo: "perfil",
+    name: "De familia",
+  },
+  {
+    id: 5,
+    tipo: "geminis",
+    name: "Viajes por carretera",
+  },
+  {
+    id: 6,
+    tipo: "trabajo",
+    name: "Futbol",
+  },
+];
+
+const data = [
+  {
+    id: 1,
+    // name: "Juan Pablo",
+    image: "https://picsum.photos/400/500",
+  },
+  {
+    id: 2,
+    // name: "Felipe",
+    image: "https://picsum.photos/400/500",
+  },
+  {
+    id: 3,
+    // name: "Juan Camilo",
+    image: "https://picsum.photos/400/500",
+  },
+  {
+    id: 4,
+    // name: "Juan Pablo jose gomez",
+    image: "https://picsum.photos/400/500",
   },
 ];

@@ -2,6 +2,8 @@ import { Image, StyleSheet, View } from "react-native";
 import ExpText from "../Utils/ExpText";
 import ExpView from "../Utils/ExpView";
 import Icons from "../Utils/Icons";
+import theme from "../../styles/theme";
+import BtnLike from "../Utils/Buttons/BtnLike";
 
 export default function Banner({ height = 300 }) {
   return (
@@ -9,12 +11,12 @@ export default function Banner({ height = 300 }) {
       <Image
         style={styles.image}
         source={{
-          uri: "https://static.tvtropes.org/pmwiki/pub/images/abcb6534_7913_4eb1_a7a5_62b081ebc628.png",
+          uri: "https://picsum.photos/400/500",
         }}
       />
       <ExpView
         style={styles.contInfo}
-        linearGradient={["transparent", "#0000008f"]}
+        linearGradient={["transparent", "#000000bf"]}
       >
         <ExpView container>
           <ExpView>
@@ -24,42 +26,19 @@ export default function Banner({ height = 300 }) {
           </ExpView>
 
           <InfoLabel
-            icon={<Icons icon="trabajo" style={{ color: "white" }} />}
+            icon={<Icons icon="trabajo" size={20} style={{ color: "white" }} />}
             text="Programador donde mi mama me llamaba feo"
           />
           <InfoLabel
-            icon={<Icons icon="ubicacion" style={{ color: "white" }} />}
+            icon={<Icons icon="ubicacion" size={20} style={{ color: "white" }} />}
             text="Medellin"
           />
+          <BtnLike style={{ marginTop: 10 }} />
         </ExpView>
       </ExpView>
     </ExpView>
   );
 }
-
-const InfoLabel = ({ icon, text }) => {
-  const stylesInfoLabel = StyleSheet.create({
-    info: {
-      marginTop: 4,
-      flexDirection: "row",
-      alignItems: "center",
-      color: "white",
-    },
-    text: {
-      marginLeft: "2%",
-      color: "white",
-    },
-  });
-
-  return (
-    <ExpView style={stylesInfoLabel.info}>
-      {icon}
-      <ExpText h3 hidden style={stylesInfoLabel.text}>
-        {text}
-      </ExpText>
-    </ExpView>
-  );
-};
 
 const styles = StyleSheet.create({
   image: {
@@ -77,3 +56,27 @@ const styles = StyleSheet.create({
     color: "white",
   },
 });
+
+const InfoLabel = ({ icon, text }) => {
+  const stylesInfoLabel = StyleSheet.create({
+    info: {
+      marginTop: 4,
+      flexDirection: "row",
+      alignItems: "center",
+      width: "95%",
+    },
+    text: {
+      marginLeft: "2%",
+      color: "white",
+    },
+  });
+
+  return (
+    <ExpView style={stylesInfoLabel.info}>
+      {icon}
+      <ExpText bold hidden style={stylesInfoLabel.text}>
+        {text}
+      </ExpText>
+    </ExpView>
+  );
+};

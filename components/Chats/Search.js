@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import { View, TextInput, Animated, StyleSheet, Pressable } from "react-native";
 import Icons from "../Utils/Icons";
+import theme from "../../styles/theme";
 
 export default function Search() {
   // Referencia para el TextInput
@@ -61,7 +62,8 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderRadius: 90,
+    borderColor: theme.colors.tertiary,
+    borderRadius: 13,
     paddingHorizontal: "5%",
     paddingVertical: "2%",
     fontSize: 16,

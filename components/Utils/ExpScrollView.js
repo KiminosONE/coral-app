@@ -1,5 +1,6 @@
 import { ScrollView, StyleSheet, View } from "react-native";
 import globalsStyles from "../../styles/globals";
+import ExpView from "./ExpView";
 
 const styles = StyleSheet.create({
   cont: {
@@ -10,10 +11,6 @@ const styles = StyleSheet.create({
   },
   scroll: {
     flexGrow: 1,
-  },
-  rounded: {
-    borderRadius: 10,
-    overflow: "hidden",
   },
 });
 
@@ -26,12 +23,14 @@ export default function ExpScrollView({
 }) {
   const stylesScroll = [
     styles.cont,
-    rounded && styles.rounded,
     container && globalsStyles.container,
     style,
   ];
+
+  const propRounded = rounded && {rounded: true}
+
   return (
-    <View style={stylesScroll}>
+    <ExpView {...propRounded} style={stylesScroll}>
       <ScrollView
         style={styles.contScroll}
         contentContainerStyle={styles.scroll}
@@ -39,6 +38,6 @@ export default function ExpScrollView({
       >
         {children}
       </ScrollView>
-    </View>
+    </ExpView>
   );
 }

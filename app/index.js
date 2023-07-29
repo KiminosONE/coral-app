@@ -8,7 +8,9 @@ import Selector from "../components/Home/Utils/Selector";
 import Banner from "../components/Home/Banner";
 import ImgHome from "../components/Home/ImgHome";
 import Question from "../components/Home/Question";
-import ContValues from "../components/Utils/Values/ContValues";
+import theme from "../styles/theme";
+import Section from "../components/Utils/Section";
+import ValuesList from "../components/Utils/Lists/ValuesList";
 export default function Page() {
   const [containerHeight, setContainerHeight] = useState(0);
 
@@ -32,10 +34,13 @@ export default function Page() {
         <Question
           question={"¿Qué es lo que más te gusta hacer?"}
           text={
-            "me gusta viajar a lugarres nuevos y comer comida exotica. conocer parqquers lindos y cafeterias"
+            "Me gusta viajar a lugarres nuevos y comer comida exotica. conocer parqquers lindos y cafeterias"
           }
+          tuLike
         />
-        <ContValues noBorder/>
+        <Section title="Intereses" titleSize="p" noBorder>
+          <ValuesList data={dataItems} />
+        </Section>
         <ImgHome />
         <Question
           question={"Ubicacion de Camil@"}
@@ -50,6 +55,39 @@ export default function Page() {
 
 const styles = StyleSheet.create({
   fondo: {
-    backgroundColor: "#ecf0f1",
+    backgroundColor: theme.colors.backgroundPrimary,
   },
 });
+
+const dataItems = [
+  {
+    id: 1,
+    tipo: "trabajo",
+    name: "Futbol",
+  },
+  {
+    id: 2,
+    tipo: "corazon",
+    name: "Playa",
+  },
+  {
+    id: 3,
+    tipo: "ubicacion",
+    name: "Country",
+  },
+  {
+    id: 4,
+    tipo: "perfil",
+    name: "De familia",
+  },
+  {
+    id: 5,
+    tipo: "geminis",
+    name: "Viajes por carretera",
+  },
+  {
+    id: 6,
+    tipo: "trabajo",
+    name: "Futbol",
+  },
+];

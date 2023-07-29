@@ -1,8 +1,9 @@
-import { View, Text, Modal, Pressable, StyleSheet } from "react-native";
+import { View, Modal, Pressable, StyleSheet } from "react-native";
 import globalsStyles from "../../styles/globals";
 import Icons from "../Utils/Icons";
+import ExpText from "../Utils/ExpText";
 
-export default function ModalComp({ hideModal, children }) {
+export default function MainModal({ hideModal, title, children }) {
   return (
     <Modal
       animationType="slide"
@@ -21,6 +22,7 @@ export default function ModalComp({ hideModal, children }) {
             <Pressable onPress={() => hideModal()}>
               <Icons icon="cierre" />
             </Pressable>
+            {title && <ExpText h2>{title}</ExpText>}
             <Icons icon="check" />
           </View>
           {children}

@@ -6,9 +6,9 @@ import Icons from "../Utils/Icons";
 export default function ChatList() {
   return (
     <Section
-      title={"Grupos"}
+      title={"Chats"}
       titleSize="h2"
-      eventIcon={<Icons icon="filter" />}
+      titleIcon={<Icons icon="filter" />}
       noBorder
     >
       {data.map((item) => (
@@ -29,55 +29,55 @@ const data = [
     name: "Juan Pablo",
     message: "Hola mundo, hola mindo, ",
     image:
-      "https://static.tvtropes.org/pmwiki/pub/images/abcb6534_7913_4eb1_a7a5_62b081ebc628.png",
+      "https://picsum.photos/400/500",
   },
   {
     id: 2,
     name: "Felipe",
     message: "Hola mundo, hola mindo",
     image:
-      "https://static.tvtropes.org/pmwiki/pub/images/abcb6534_7913_4eb1_a7a5_62b081ebc628.png",
+      "https://picsum.photos/400/500",
   },
   {
     id: 3,
     name: "Juan Camilo",
     message: "Hola mundo, hola mindo",
     image:
-      "https://static.tvtropes.org/pmwiki/pub/images/abcb6534_7913_4eb1_a7a5_62b081ebc628.png",
+      "https://picsum.photos/400/500",
   },
   {
     id: 4,
     name: "Juan Pablo jose gomez gutierrez hernandez perez",
     message: "Hola mundo, hola mindo",
     image:
-      "https://static.tvtropes.org/pmwiki/pub/images/abcb6534_7913_4eb1_a7a5_62b081ebc628.png",
+      "https://picsum.photos/400/500",
   },
   {
     id: 5,
     name: "Juan Pablo jose gomez gutierrez hernandez perez",
     message: "Hola mundo, hola mindo",
     image:
-      "https://static.tvtropes.org/pmwiki/pub/images/abcb6534_7913_4eb1_a7a5_62b081ebc628.png",
+      "https://picsum.photos/400/500",
   },
   {
     id: 6,
     name: "Juan Pablo jose gomez gutierrez hernandez perez",
     message: "Hola mundo, hola mindo",
     image:
-      "https://static.tvtropes.org/pmwiki/pub/images/abcb6534_7913_4eb1_a7a5_62b081ebc628.png",
+      "https://picsum.photos/400/500",
   },
   {
     id: 7,
     name: "Juan Pablo jose gomez gutierrez hernandez perez",
     message: "Hola mundo, hola mindo",
     image:
-      "https://static.tvtropes.org/pmwiki/pub/images/abcb6534_7913_4eb1_a7a5_62b081ebc628.png",
+      "https://picsum.photos/400/500",
   },
   {
     id: 8,
     name: "Juan Pablo 8 jose gomez gutierrez hernandez perez",
     message: "Hola mundo, hola mindo",
     image:
-      "https://static.tvtropes.org/pmwiki/pub/images/abcb6534_7913_4eb1_a7a5_62b081ebc628.png",
+      "https://picsum.photos/400/500",
   },
 ];

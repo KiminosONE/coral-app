@@ -16,6 +16,10 @@ const globalsStyles = StyleSheet.create({
     alignItems: "center",
     overflow: "hidden",
   },
+  rounded: {
+    borderRadius: 13,
+    overflow: "hidden",
+  },
 });
 
 export default globalsStyles;

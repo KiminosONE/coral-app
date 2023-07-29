@@ -1,5 +1,8 @@
 import { Image, StyleSheet } from "react-native";
 import ExpView from "../Utils/ExpView";
+import Icons from "../Utils/Icons";
+import theme from "../../styles/theme";
+import BtnLike from "../Utils/Buttons/BtnLike";
 
 export default function ImgHome() {
   return (
@@ -7,16 +10,20 @@ export default function ImgHome() {
       <Image
         style={styles.image}
         source={{
-          uri: "https://static.tvtropes.org/pmwiki/pub/images/abcb6534_7913_4eb1_a7a5_62b081ebc628.png",
+          uri: "https://picsum.photos/400/500",
         }}
       />
+
+      <ExpView container style={styles.contLike}>
+        <BtnLike />
+      </ExpView>
     </ExpView>
   );
 }
 
 const styles = StyleSheet.create({
   cont: {
-    flex: 1,
+    position: "relative",
     // paddingVertical: 10,
   },
   image: {
@@ -24,4 +31,9 @@ const styles = StyleSheet.create({
     height: 450,
     // aspectRatio: 9 / 16,
   },
+  contLike: {
+    position: "absolute",
+    bottom: 0,
+    paddingVertical: "5%",
+  }
 });

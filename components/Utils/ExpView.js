@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
 export default function ExpView({
   linearGradient,
   container,
+  rounded,
   contHome,
   header,
   style,
@@ -25,6 +26,7 @@ export default function ExpView({
   const stylesView = [
     styles.cont,
     container && globalsStyles.container,
+    rounded && globalsStyles.rounded,
     contHome && globalsStyles.containerHome,
     header && globalsStyles.header,
     style,

@@ -5,6 +5,7 @@ import globalsStyles from "../styles/globals";
 import Search from "./Chats/Search";
 import { Link } from "expo-router";
 import ExpText from "./Utils/ExpText";
+import theme from "../styles/theme";
 
 export default function Header({ children }) {
   // Renderiza el encabezado con el botón, el TextInput animado y el ícono
@@ -17,7 +18,9 @@ export default function Header({ children }) {
         ]}
       >
         <Link href="/" style={styles.logo}>
-          <ExpText h1>Astro</ExpText>
+          <ExpText h1 style={styles.textLogo}>
+            Astro
+          </ExpText>
         </Link>
         {children}
       </View>
@@ -28,5 +31,8 @@ export default function Header({ children }) {
 const styles = StyleSheet.create({
   logo: {
     marginRight: "auto",
+  },
+  textLogo: {
+    color: theme.colors.primary,
   },
 });

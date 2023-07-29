@@ -9,7 +9,7 @@ export default function Head({ children }) {
         <Image
           style={styles.image}
           source={{
-            uri: "https://picsum.photos/200/300",
+            uri: "https://picsum.photos/400/500",
           }}
         />
       </ExpView>
