@@ -4,6 +4,7 @@ import Icons from "../Icons";
 import ValueLabel from "./Cards/ValueLabel";
 
 export default function ValuesList({ data }) {
+
   return (
     <ExpView style={styles.contValues}>
       {data.map((item) => (

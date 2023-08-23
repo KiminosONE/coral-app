@@ -2,7 +2,7 @@ import { Image, StyleSheet } from "react-native";
 import ExpText from "../Utils/ExpText";
 import ExpView from "../Utils/ExpView";
 
-export default function Head({ children }) {
+export default function Head({ data }) {
   return (
     <ExpView container style={styles.cont}>
       <ExpView style={styles.contImage}>
@@ -14,9 +14,11 @@ export default function Head({ children }) {
         />
       </ExpView>
       <ExpView style={styles.contInfo}>
-        <ExpText h1>Camil@</ExpText>
+        <ExpText h1 hidden>
+          {data.nombre}
+        </ExpText>
         <ExpView>
-          <ExpText>Medellin, Colombia</ExpText>
+          <ExpText>{data.ubicacion}</ExpText>
         </ExpView>
       </ExpView>
     </ExpView>

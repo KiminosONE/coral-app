@@ -5,7 +5,7 @@ import Icons from "../Utils/Icons";
 import theme from "../../styles/theme";
 import BtnLike from "../Utils/Buttons/BtnLike";
 
-export default function Banner({ height = 300 }) {
+export default function Banner({ height = 300, data }) {
   return (
     <ExpView style={{ height }}>
       <Image
@@ -21,17 +21,17 @@ export default function Banner({ height = 300 }) {
         <ExpView container>
           <ExpView>
             <ExpText h1 style={styles.text}>
-              Camil@
+              {data.nombre}
             </ExpText>
           </ExpView>
 
           <InfoLabel
             icon={<Icons icon="trabajo" size={20} style={{ color: "white" }} />}
-            text="Programador donde mi mama me llamaba feo"
+            text={data.signo_zodiacal}
           />
           <InfoLabel
             icon={<Icons icon="ubicacion" size={20} style={{ color: "white" }} />}
-            text="Medellin"
+            text={data.ubicacion}
           />
           <BtnLike style={{ marginTop: 10 }} />
         </ExpView>

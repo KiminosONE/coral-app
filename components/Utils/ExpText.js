@@ -26,6 +26,9 @@ const styles = StyleSheet.create({
   bold: {
     fontWeight: theme.fontWeights.bold,
   },
+  strong: {
+    color: theme.colors.textPrimary,
+  },
 });
 
 export default function ExpText({
@@ -33,6 +36,7 @@ export default function ExpText({
   h2,
   h3,
   bold,
+  strong,
   hidden,
   children,
   style,
@@ -44,6 +48,7 @@ export default function ExpText({
     h2 && styles.h2,
     h3 && styles.h3,
     bold && styles.bold,
+    strong && styles.strong,
     style,
   ];
 

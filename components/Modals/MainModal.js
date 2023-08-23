@@ -1,33 +1,42 @@
-import { View, Modal, Pressable, StyleSheet } from "react-native";
-import globalsStyles from "../../styles/globals";
+import { Modal, Pressable, StyleSheet } from "react-native";
 import Icons from "../Utils/Icons";
 import ExpText from "../Utils/ExpText";
+import ExpView from "../Utils/ExpView";
+import ExpScrollView from "../Utils/ExpScrollView";
 
-export default function MainModal({ hideModal, title, children }) {
+export default function MainModal({
+  modalVisible,
+  setModalVisible,
+  title,
+  children,
+  event = () => {},
+}) {
   return (
     <Modal
       animationType="slide"
       transparent={true}
-      visible={true}
-      onRequestClose={() => hideModal()}
+      visible={modalVisible}
+      onRequestClose={() => setModalVisible()}
     >
       <Pressable
         style={{ height: "5%", marginBottom: 10 }}
-        onPress={() => hideModal()}
+        onPress={() => setModalVisible(false)}
       />
 
-      <View style={styles.modal}>
-        <View style={globalsStyles.container}>
-          <View style={globalsStyles.header}>
-            <Pressable onPress={() => hideModal()}>
-              <Icons icon="cierre" />
-            </Pressable>
-            {title && <ExpText h2>{title}</ExpText>}
+      <ExpView style={styles.modal}>
+        <ExpView container header>
+          <Pressable onPress={() => setModalVisible(false)}>
+            <Icons icon="cierre" />
+          </Pressable>
+          {title && <ExpText h2>{title}</ExpText>}
+          <Pressable onPress={() => event()}>
             <Icons icon="check" />
-          </View>
-          {children}
-        </View>
-      </View>
+          </Pressable>
+        </ExpView>
+        <ExpScrollView>
+          <ExpView container>{children}</ExpView>
+        </ExpScrollView>
+      </ExpView>
     </Modal>
   );
 }
